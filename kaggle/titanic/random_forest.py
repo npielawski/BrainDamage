@@ -25,8 +25,8 @@ df["Cabin"] = df["Cabin"].fillna("N").apply(lambda s: s[0])
 map_cabin = { "N": 0, "A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "T": 8 }
 df["Cabin"] = df["Cabin"].map(map_cabin)
 
-map_sex = { "N": 0, "female": 1, "male": 2 }
-df["Sex"] = df["Sex"].fillna("N").map(map_sex)
+map_sex = { "female": 0, "male": 1 }
+df["Sex"] = df["Sex"].map(map_sex)
 
 map_embarked = { "S": 0, "C": 1, "Q": 2 }
 df["Embarked"] = df["Embarked"].fillna("S").map(map_embarked)
