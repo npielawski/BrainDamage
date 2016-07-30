@@ -1,2 +1,5 @@
+# We remove the different predicted files
 kaggle/titanic/predict.csv
 kaggle/shelter/predict.csv
+# Datasets don't need to be online neither
+projects/mnist/MNIST_data
