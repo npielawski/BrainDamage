@@ -3,3 +3,5 @@ kaggle/titanic/predict.csv
 kaggle/shelter/predict.csv
 # Datasets don't need to be online neither
 projects/mnist/MNIST_data
+# Do not publish my workspace
+workspace
