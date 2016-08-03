@@ -1,7 +1,9 @@
-# We remove the different predicted files
-kaggle/titanic/predict.csv
-kaggle/shelter/predict.csv
-# Datasets don't need to be online neither
-projects/mnist/MNIST_data
+# We remove all datasets related to Kaggle and predicted values
+# Titanic
+kaggle/titanic/*.csv
+# Shelter
+kaggle/shelter/*.csv
+# Redhat
+kaggle/redhat/dataset
 # Do not publish my workspace
 workspace
