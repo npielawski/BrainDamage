@@ -3,6 +3,9 @@ import pandas as pd
 # Author: Nicolas Pielawski
 # Creation date: August 2nd 2016
 
+# Remove NaN in the dataset
+removeNaN = True
+
 # Loading the activity dataset
 print("Loading training dataset")
 activities = pd.read_csv("dataset/act_train.csv")
@@ -12,7 +15,9 @@ activities["month"] = activities["date"].apply(lambda d: d.split("-")[1])
 activities["day"] = activities["date"].apply(lambda d: d.split("-")[2])
 # Let's transform the string values to integers'''
 def str_to_cat(c):
-    if pd.isnull(c): return 0
+    if pd.isnull(c):
+        if removeNaN: return 0
+        else: return c
     return c.split(" ")[1]
 activities["activity"] = activities["activity_category"].apply(str_to_cat) 
 for i in range(1, 11):
@@ -45,4 +50,7 @@ final_set = activities.merge(people)
 final_set = final_set.drop("people_id", 1)
 
 # Save to new database
-final_set.to_csv("dataset/people_activity.csv")
+if removeNaN: path = "dataset/people_activity.csv"
+else: path = "dataset/people_activity_na.csv"
+
+final_set.to_csv(path)
