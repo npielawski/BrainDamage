@@ -9,7 +9,7 @@ import xgboost as xgb
 
 # Loading the dataset
 print("Loading dataset...", end="")
-df = pd.read_csv("dataset/people_activity.csv")
+df = pd.read_csv("dataset/people_activity_na.csv")
 print("OK")
 
 # Let's split the columns into x and y
@@ -18,14 +18,10 @@ x = df.drop("outcome", 1)
 
 # Let's reduce the size of the dataset for now...
 sep = np.random.rand(len(x)) > 0.9
-x = x[sep]
-y = y[sep]
-# Let's create a training and a testing dataset
-sep = np.random.rand(len(x)) < 0.9
-train = x[sep]
-train_lbl = y[sep]
-test = x[~sep]
-test_lbl = y[~sep]
+x, y = x[sep], y[sep]
+
+# Let's convert the dataset to xgboost type
+dtrain = xgb.DMatrix(x, label=y, missing=np.nan)
 
 # Creating the boosted gradient
 # Parameters doc: https://github.com/dmlc/xgboost/blob/master/doc/parameter.md
@@ -33,13 +29,17 @@ param = {
     "n_estimators": 200,
     "learning_rate": 0.2,
     "max_depth": 20,
-    "min_child_weight": 2,
+    "min_child_weight": 3,
     "gamma": 2,
     "subsample": 0.7,
     "colsample_bytree": 0.5,
     "objective": "binary:logistic"
 }
 
+nrounds = 100
+res = xgb.cv(param, dtrain, nrounds, 10, metrics=["auc"])
+print(res[-3:])
+'''
 # Now we create and train our beloved bst!
 bst = xgb.XGBClassifier(**param)
 bst.fit(train, train_lbl)
@@ -65,4 +65,4 @@ print()
 # Let's get the AUC
 fpr, tpr, thresholds = metrics.roc_curve(test_lbl, test_pred)
 auc = metrics.auc(fpr, tpr)
-print("Final AUC: {:.04f}".format(auc))
+print("Final AUC: {:.04f}".format(auc))'''
