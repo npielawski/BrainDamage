@@ -1,26 +1,21 @@
 # BrainDamage
-Machine Learning Concepts &amp; Contests
+This page contains most of the things I have been working on related to machine learning.
 
 ## Whoami?
-I am a french student becoming a CS engineer, I love machine learning and
-neural networks. I started creating some fully connected some years ago (really
-unefficiently) and nowadays I am focusing on learning deeper and more complex
-topics: deep learning, reinforcement learning and so on...
-
-I hope that you are going to find what you look for and if you have any question
-or suggestion, I'd be glad to talk about them with you!
+I'm a French CS engineering student, currently in the final year of my studies.
+I love machine learning and neural networks. I started to create some fully connected networks some years ago (really unefficiently) and nowadays I'm focusing on deepening my knowledge in more complex topics: deep learning, reinforcement learning and so on.
 
 ## What is this git repo about?
-This repo is for me a way to work on my projects and to share them throughout the
-world. I hope it will also help me to get eventually hired.
+This repository contains most of the contests I have participated in on kaggle.com as well as some additional ideas I have developed (mainly tools and libraries).
 
-About the content, you should definitely check the INFOS.md file that is containing
-really interesting links. The kaggle folder contains the project files I have been
-working with when competing on Kaggle and the tools folder contains several useful
-tools I created.
+I hope that you will find what you're looking for here, but if you have any questions
+or suggestions, I'll be happy to discuss them with you.
+
+Concerning the contents, you should definitely check out the INFOS.md file as it provides some really interesting links. In the kaggle folder, you can find the project files I have been
+working on when competing on Kaggle. Finally, the tools folder contains several useful
+tools I have created.
 
 ## Why this name for the repo?
-Because I love the following song from Pink Floyd:
+While searching a name for this repo, I was listening to Pink Floyd's song brain damage:
 [Pink Floyd - Brain Damage](https://open.spotify.com/track/1gNBKwi3t2K5HxbRp5Vose)
-I was lacking of a proper name and I like the relation between this song
-that I love and the neural networks that I love as well ;)
+I finally decided to name this repo after this song, even though I'm trying to keep my own neural network sane ;)
